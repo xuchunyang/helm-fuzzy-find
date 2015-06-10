@@ -27,7 +27,7 @@
 ;;; Commentary:
 ;;
 ;; `helm-fuzzy-find.el' is the Helm interface for the `fuzzy-find' command
-;; line program (`https://github.com/silentbicycle/ff'), you can use it to
+;; line program (https://github.com/silentbicycle/ff), you can use it to
 ;; search files under a directory using Fuzzy Search.
 ;;
 ;; When you want to search files only according to their base-names, use the
@@ -43,7 +43,7 @@
 ;; To install, make sure this file is saved in a directory in your `load-path',
 ;; and add the line:
 ;;
-;;   (require 'undo-tree)
+;;   (require 'helm-fuzzy-find)
 ;;
 ;; to your Emacs initialization file.
 ;;
@@ -51,7 +51,7 @@
 ;; Usage
 ;; =====
 ;;
-;; M-x helm-fuzzy-find to Launch `helm-fuzzy-find' from current buffer's
+;; M-x helm-fuzzy-find to launch `helm-fuzzy-find' from the current buffer's
 ;; directory, if with prefix argument, you can choose a directory to search.
 ;;
 ;; Like `helm-find', you can also launch `helm-fuzzy-find' from
