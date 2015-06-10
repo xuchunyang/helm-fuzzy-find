@@ -34,6 +34,13 @@ Like `helm-find`, you can also launch `helm-fuzzy-find` from
 `helm-find-files` (it usually binds to <kbd>C-x C-f</kbd> for helm users) by typing
 <kbd>C-c C-/</kbd> (you can customize this key by setting `helm-fuzzy-find-keybind`).
 
+Note
+====
+
+To use `helm-fuzzy-find`, you need to know the format (**NOT** regexp) of the
+query string of `fuzzy-find`, especially the meaning of "/" character and "="
+character, refer to its manual page for more info.
+
 
 ---
 Converted from `helm-fuzzy-find.el` by [*el2markdown*](https://github.com/Lindydancer/el2markdown).

@@ -57,6 +57,13 @@
 ;; Like `helm-find', you can also launch `helm-fuzzy-find' from
 ;; `helm-find-files' (it usually binds to `C-x C-f' for helm users) by typing
 ;; `C-c C-/' (you can customize this key by setting `helm-fuzzy-find-keybind').
+;;
+;; Note
+;; ====
+;;
+;; To use `helm-fuzzy-find', you need to know the format (**NOT** regexp) of the
+;; query string of `fuzzy-find', especially the meaning of "/" character and "="
+;; character, refer to its manual page for more info.
 
 
 ;;; Code:
@@ -88,15 +95,10 @@ BEFORE activating the function `helm-fuzzy-find' and BEFORE `require'ing the
   :type 'string)
 
 (defun helm-fuzzy-find-shell-command-fn ()
-  "Asynchronously fetch candidates for `helm-fuzzy-find'.
-
-Below is currently NOT supported.
-
-Additional find options can be specified after a \"*\"
-separator"
+  "Asynchronously fetch candidates for `helm-fuzzy-find'. "
   (let* (process-connection-type
          non-essential
-         (cmd (concat helm-fuzzy-find-program " " helm-pattern))
+         (cmd (concat helm-fuzzy-find-program " " (shell-quote-argument helm-pattern)))
          (proc (start-file-process-shell-command "ff" helm-buffer cmd)))
     (helm-log "Fuzzy Find command:\n%s" cmd)
     (prog1 proc
