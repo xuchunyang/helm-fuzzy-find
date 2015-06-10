@@ -9,7 +9,7 @@
 ;; Package-Requires: ((emacs "24.1") (helm "1.7.0"))
 ;; Keywords: helm fuzzy find file
 
-;; This file not is part of Emacs.
+;; This file is not part of Emacs.
 ;;
 ;; This file is free software: you can redistribute it and/or modify it under
 ;; the terms of the GNU General Public License as published by the Free
