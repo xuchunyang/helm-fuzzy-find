@@ -4,7 +4,7 @@
 
 ;; Author: Chunyang Xu <xuchunyang56@gmail.com>
 ;; Created: Wed Jun 10 12:56:06 CST 2015
-;; Version: 0.1
+;; Version: 0.2
 ;; URL: https://github.com/xuchunyang/helm-fuzzy-find
 ;; Package-Requires: ((emacs "24.1") (helm "1.7.0"))
 ;; Keywords: helm fuzzy find file
@@ -74,6 +74,19 @@ helm interface for the `fuzzy-find' command line program."
   :group 'helm-fuzzy-find
   :type 'string)
 
+;; helm-find-files integration.
+(defcustom helm-fuzzy-find-keybind (kbd "C-c C-/")
+  "Keybinding under which `helm-find-files-map' is assigned.
+
+Use this key to launch `helm-fuzzy-find' from `helm-find-files'.
+
+To change this do something like:
+    (setq helm-fuzzy-find-keybind (kbd \"C-c /\"))
+BEFORE activating the function `helm-fuzzy-find' and BEFORE `require'ing the
+`helm-fuzzy-find' feature."
+  :group 'helm-fuzzy-find
+  :type 'string)
+
 (defun helm-fuzzy-find-shell-command-fn ()
   "Asynchronously fetch candidates for `helm-fuzzy-find'.
 
@@ -125,7 +138,6 @@ separator"
           :ff-transformer-show-only-basename nil
           :case-fold-search helm-file-name-case-fold-search)))
 
-;; helm-find-files integration.
 (defun helm-ff-fuzzy-find-sh-command (_candidate)
   "Run `helm-fuzzy-find' from `helm-find-files'."
   (helm-fuzzy-find-1 helm-ff-default-directory))
@@ -136,12 +148,12 @@ separator"
   (with-helm-alive-p
     (helm-quit-and-execute-action 'helm-ff-fuzzy-find-sh-command)))
 
-;;; TODO: customize this shortcut
-(define-key helm-find-files-map (kbd "C-c C-/") #'helm-ff-run-fuzzy-find-sh-command)
+(define-key helm-find-files-map helm-fuzzy-find-keybind
+  #'helm-ff-run-fuzzy-find-sh-command)
 
 (defmethod helm-setup-user-source ((source helm-source-ffiles))
   (helm-source-add-action-to-source-if
-   "Find file with fuzzy-find `C-c C-/'"
+   (format "Find file with fuzzy-find `%s'" (key-description helm-fuzzy-find-keybind))
    #'helm-ff-fuzzy-find-sh-command
    source (lambda (_candidate) t)))
 

@@ -1,7 +1,7 @@
 # helm-fuzzy-find - Find file using Fuzzy Search
 
 *Author:* Chunyang Xu <xuchunyang56@gmail.com><br>
-*Version:* 0.1<br>
+*Version:* 0.2<br>
 *URL:* [https://github.com/xuchunyang/helm-fuzzy-find](https://github.com/xuchunyang/helm-fuzzy-find)<br>
 
 `helm-fuzzy-find.el` is the Helm interface for the `fuzzy-find` command
