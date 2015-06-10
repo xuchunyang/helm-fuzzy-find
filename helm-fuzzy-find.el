@@ -56,7 +56,7 @@
 ;;
 ;; Like `helm-find', you can also launch `helm-fuzzy-find' from
 ;; `helm-find-files' (it usually binds to `C-x C-f' for helm users) by typing
-;; `C-c C-/'
+;; `C-c C-/' (you can customize this key by setting `helm-fuzzy-find-keybind').
 
 
 ;;; Code:

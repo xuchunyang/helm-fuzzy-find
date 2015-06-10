@@ -32,7 +32,7 @@ directory, if with prefix argument, you can choose a directory to search.
 
 Like `helm-find`, you can also launch `helm-fuzzy-find` from
 `helm-find-files` (it usually binds to <kbd>C-x C-f</kbd> for helm users) by typing
-<kbd>C-c C-/</kbd>
+<kbd>C-c C-/</kbd> (you can customize this key by setting `helm-fuzzy-find-keybind`).
 
 
 ---
