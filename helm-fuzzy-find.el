@@ -108,7 +108,9 @@ separator"
                      (replace-regexp-in-string "\n" "" event))))))))
 
 (defvar helm-source-fuzzy-find
-  (helm-build-async-source "fuzzy Find"
+  (helm-build-async-source "Fuzzy Find"
+    :header-name (lambda (name)
+                   (concat name " in [" (helm-default-directory) "]"))
     :candidates-process #'helm-fuzzy-find-shell-command-fn
     :filtered-candidate-transformer 'helm-findutils-transformer
     :action-transformer 'helm-transform-file-load-el
