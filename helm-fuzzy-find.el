@@ -74,7 +74,10 @@
 (defgroup helm-fuzzy-find nil
   "Find file using Fuzzy Search.
 helm interface for the `fuzzy-find' command line program."
-  :group 'helm)
+  :group 'helm
+  :link '(emacs-commentary-link :tag "commentary" "helm-fuzzy-find.el")
+  :link '(emacs-library-link :tag "lisp file" "helm-fuzzy-find.el")
+  :link '(url-link :tag "web page" "https://github.com/xuchunyang/helm-fuzzy-find"))
 
 (defcustom helm-fuzzy-find-program "ff"
   "Program name of the `fuzzy-find' command line program."
