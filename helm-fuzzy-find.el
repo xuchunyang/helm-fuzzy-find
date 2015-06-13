@@ -26,15 +26,15 @@
 
 ;;; Commentary:
 ;;
-;; `helm-fuzzy-find.el' is the Helm interface for the `fuzzy-find' command
+;; `helm-fuzzy-find.el' is a Helm extension for the `fuzzy-find' command
 ;; line program (https://github.com/silentbicycle/ff), you can use it to
 ;; search files under a directory using Fuzzy Search.
 ;;
 ;; When you want to search files only according to their base-names, use the
 ;; notable `find' program and its helm interface `helm-find' instead, but if
 ;; you also use their parent directory names, i.e., full absolute path name of
-;; a file or directory, `fuzzy-find' is better.  You can read `fuzzy-find''s
-;; homepage and manual page to learn more about these.
+;; a file or directory, `fuzzy-find' is probably better.  You can read
+;; `fuzzy-find''s homepage and manual page to learn more about these.
 ;;
 ;;
 ;; Installation
@@ -64,6 +64,10 @@
 ;; To use `helm-fuzzy-find', you need to know the format (**NOT** regexp) of the
 ;; query string of `fuzzy-find', especially the meaning of "/" character and "="
 ;; character, refer to its manual page for more info.
+;;
+;; To install `fuzzy-find' on Mac OS X via MacPorts:
+;;
+;;   $ sudo port install fuzzy-find
 
 
 ;;; Code:
