@@ -74,6 +74,7 @@
 
 (require 'helm)
 (require 'helm-files)
+(require 'helm-find)
 
 (defgroup helm-fuzzy-find nil
   "Find file using Fuzzy Search.
